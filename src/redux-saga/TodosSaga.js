@@ -17,7 +17,7 @@ class Todos extends Component {
                 <Button variant="contained" onClick={this.handleClick}>Get Todos</Button>
                 <div>
                     {
-                        todos.length && todos.map(todo => (
+                        todos.length > 0 && todos.map(todo => (
                             <div key={todo.todo} style={{ margin: 20 }}>
                                 <Typography>{todo.todo}</Typography>
                             </div>
