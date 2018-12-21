@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The ComponentWithStyles component renders as expected 1`] = `
+<Component
+  classes={
+    Object {
+      "button": "Component-button-3",
+      "heading": "Component-heading-2",
+      "root": "Component-root-1",
+    }
+  }
+/>
+`;

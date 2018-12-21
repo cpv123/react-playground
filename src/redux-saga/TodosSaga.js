@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Typography } from '@material-ui/core';
 
-class Todos extends Component {
+class SagaExample extends Component {
 
     handleClick = dispatch => {
         this.props.dispatch({
@@ -33,4 +33,4 @@ const mapStateToProps = state => ({
     todos: state.todos.todos
 });
 
-export default connect(mapStateToProps)(Todos);
+export default connect(mapStateToProps)(SagaExample);

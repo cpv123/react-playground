@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The ComplexComponent component renders as expected 1`] = `
+<withState(withHandlers(onlyUpdateForKeys(ComplexComponent)))
+  classes={
+    Object {
+      "root": "withState-withHandlers-onlyUpdateForKeys-ComplexComponent----root-1",
+    }
+  }
+/>
+`;

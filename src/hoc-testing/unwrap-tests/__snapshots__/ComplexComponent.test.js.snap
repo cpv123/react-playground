@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The ComplexCompnent component renders as expected 1`] = `
+<withHandlers(onlyUpdateForKeys(ComplexComponent))
+  buttonTitle={0}
+  setButtonTitle={[Function]}
+/>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The ComplexComponent component renders as expected 1`] = `
+<div
+  className="withState-withHandlers-onlyUpdateForKeys-ComplexComponent----root-1"
+>
+  <WithStyles(Typography)>
+    Test heading
+  </WithStyles(Typography)>
+  <WithStyles(Button)
+    color="primary"
+    onClick={[Function]}
+    variant="contained"
+  >
+    0
+  </WithStyles(Button)>
+</div>
+`;

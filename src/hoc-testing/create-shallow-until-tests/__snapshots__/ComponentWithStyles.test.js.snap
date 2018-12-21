@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The ComponentWithStyles component renders as expected 1`] = `
+<div
+  className="Component-root-1"
+>
+  <WithStyles(ExpansionPanel)>
+    <WithStyles(ExpansionPanelSummary)
+      expandIcon={<pure(ExpandMoreIcon) />}
+    >
+      <WithStyles(Typography)
+        className="Component-heading-2"
+      >
+        Expansion Panel Title
+      </WithStyles(Typography)>
+    </WithStyles(ExpansionPanelSummary)>
+    <WithStyles(ExpansionPanelDetails)>
+      <WithStyles(Button)
+        className="Component-button-3"
+        color="primary"
+        onClick={[Function]}
+        variant="contained"
+      >
+        Click Me
+      </WithStyles(Button)>
+    </WithStyles(ExpansionPanelDetails)>
+  </WithStyles(ExpansionPanel)>
+</div>
+`;

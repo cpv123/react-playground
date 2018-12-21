@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the unwrapped ComplexComponent renders as expected 1`] = `
+<div>
+  <WithStyles(Typography)>
+    Test heading
+  </WithStyles(Typography)>
+  <WithStyles(Button)
+    color="primary"
+    onClick={[MockFunction]}
+    variant="contained"
+  >
+    0
+  </WithStyles(Button)>
+</div>
+`;
