@@ -4,7 +4,7 @@ import LandingPage from './LandingPage';
 import SagaExample from './redux-saga/TodosSaga';
 import Tables from './virtualized-tables/Tables';
 import Context from './recompose-context/Provider';
-import SelectContainer from './react-select/main';
+import SelectContainer from './react-select';
 import RenderProps from './render-props';
 import Hocs from './hoc-testing';
 
