@@ -13,7 +13,7 @@ const styles = {
         flexDirection: 'column',
         margin: 50,
     },
-    performanceContainer: {
+    selectGroup: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
@@ -30,7 +30,8 @@ const styles = {
 function SelectContainer() {
     return (
         <div style={styles.root}>
-            <div style={styles.performanceContainer}>
+        
+            <div style={styles.selectGroup}>
                 <div style={styles.selectContainer}>
                     <span style={styles.heading}>Keydown event handler takes approx. 350ms.</span>
                     <IntegrationReactSelect options={increasedLengthSuggestions} />
@@ -42,29 +43,38 @@ function SelectContainer() {
                 </div>
             </div>
 
-            <div style={{ width: '30%' }}>
-                <EnhancedSelect 
-                    placeholder="Pick a shop..."  
-                />
-            </div>
+            <div style={styles.selectGroup}>
+                <div style={{
+                    ...styles.selectContainer,
+                    width: '40%',
+                }}>
+                    <span style={styles.heading}>Select wrapped with Reaxios HOC.</span>
+                    <EnhancedSelect placeholder="Pick a shop..." />
+                </div>
 
-            <div>
-                <Reaxios url="http://localhost:5000/shops">
-                    {
-                        ({ error, isLoading, data }) => {
-                            if (data && data.length) {
-                                const options = data.map(item => ({
-                                    value: item._id,
-                                    label: item.name,
-                                }))
-                                return <PureSelect options={options} />
-                            } else {
-                                return <CircularProgress />
+                <div style={{
+                    ...styles.selectContainer,
+                    width: '40%'
+                }}>
+                    <span style={styles.heading}>Select manaually wrapped by Reaxios.</span>
+                    <Reaxios url="http://localhost:5000/shops">
+                        {
+                            ({ response, isLoading, error }) => {
+                                if (response && response.length) {
+                                    const options = response.map(item => ({
+                                        value: item._id,
+                                        label: item.name,
+                                    }))
+                                    return <PureSelect options={options} />
+                                } else {
+                                    return <CircularProgress />
+                                }
                             }
                         }
-                    }
-                </Reaxios>
+                    </Reaxios>
+                </div>
             </div>
+
         </div>
     );
 }

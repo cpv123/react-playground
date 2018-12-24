@@ -8,9 +8,9 @@ class Reaxios extends React.Component {
         super(props);
 
         this.state = {
-            error: null,
+            response: null,
             isLoading: true,
-            data: null, 
+            error: null, 
         };
     }
 
@@ -23,7 +23,7 @@ class Reaxios extends React.Component {
             const res = await axios.get(this.props.url);
             this.setState({
                 isLoading: false,
-                data: res.data,
+                response: res.data,
             });
         } catch(error) {
             this.setState({
@@ -41,11 +41,6 @@ class Reaxios extends React.Component {
 Reaxios.propTypes = {
     children: PropTypes.func,
     url: PropTypes.string.isRequired,
-    method: PropTypes.string.isRequired,
-};
-
-Reaxios.defaultProps = {
-    method: "GET",
 };
 
 export default Reaxios;

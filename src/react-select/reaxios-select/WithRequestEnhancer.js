@@ -8,12 +8,13 @@ export const WithRequestEnhancer = (url, value, name) => WrappedComponent => {
                 return (
                     <Reaxios url={url}>
                         {
-                            ({ error, loading, result }) => {
+                            ({ response, isLoading, error }) => {
                                 const dataLoadingProps = {
+                                    response: response ? formatData(response, value, name) : undefined,
+                                    isLoading,
                                     error,
-                                    loading,
-                                    results: result ? formatData(result.body, value, name) : undefined,
                                 };
+                                console.log(response, isLoading, error)
                                 return <WrappedComponent {...this.props} {...dataLoadingProps} />
                             }
                         }

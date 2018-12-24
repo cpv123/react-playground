@@ -13,8 +13,8 @@ function LoadDataSelect(props) {
 
     return (
         <Select
-            isLoading={props.loading}
-            options={props.results}
+            isLoading={props.isLoading}
+            options={props.response}
             {...props}
             {...errorProps}
         />
