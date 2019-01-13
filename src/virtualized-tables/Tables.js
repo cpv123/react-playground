@@ -1,63 +1,34 @@
 import React from 'react';
 import { lifecycle, compose, withState, withHandlers } from 'recompose';
-import MuiTable from 'mui-virtualized-table';
 import axios from 'axios';
-import { CircularProgress, Typography } from '@material-ui/core';
+import MuiTableComponent from './MuiTable';
+import VirtualizedTableComponent from './VirtualizedTable';
+import TableEnhancer from './table-enhancer';
 
 const styles = {
     root: {
         display: 'flex',
     },
-    tableContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
-    header: {
-        marginBottom: 20,
-    },
 };
 
-// TODO - use a branch HOC for loading
+// Tables enhanced to include header, and account for data loading
+const EnhancedMuiTable = TableEnhancer("Mui-Virtualized-Table")(MuiTableComponent);
+const EnhancedVirtualizedTable = TableEnhancer("Virtualized-Table")(VirtualizedTableComponent);
 
-function Tables({ data, sortData }) {
-    return (
-        <div style={styles.root}>
-            <div style={styles.tableContainer}>
-                <header style={styles.header}>
-                    <Typography variant="button">
-                        Mui-Virtualized-Table
-                    </Typography>
-                </header>
-                { !data.length ? <CircularProgress /> : (
-                    <MuiTable 
-                        width={500} 
-                        style={{ backgroundColor: 'white' }} 
-                        data={data}
-                        columns={[{ name: 'name', header: "Name" }, { name: 'location', header: "Location" }]}
-                        includeHeaders
-                        onCellClick={() => console.log('clicked')}
-                        resizable
-                    />
-                ) }
-            </div>
-            <div style={styles.tableContainer}>
-                <header>
-                    <Typography variant="button">
-                        React-Virtualized
-                    </Typography>
-                </header>
-            </div>
-        </div>
-    )
-};
+const Tables = ({ data }) => (
+    <div style={styles.root}>
+
+        <EnhancedMuiTable data={data} />
+
+        <EnhancedVirtualizedTable data={data} />
+
+    </div>
+);
 
 export default compose(
     withState('data', 'setData', []),
     withHandlers({
-        updateData: ({ setData }) => (fetchedData) => {
-            setData(fetchedData)
-        },
+        updateData: ({ setData }) => fetchedData => setData(fetchedData)
     }),
     lifecycle({
         componentDidMount() {

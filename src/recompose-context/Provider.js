@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { compose, withContext, withProps } from 'recompose';
 import { ChildOne } from './Children';
 
-function Provider({ context }) {
-    return (
-        <ChildOne />
-    )
-}
+// Parent component which provides the context
+const Provider = ({ context }) => (
+    <ChildOne />
+);
 
 export default compose(
     withProps({ context: "Test context string" }),

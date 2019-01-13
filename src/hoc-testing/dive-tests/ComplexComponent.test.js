@@ -7,7 +7,7 @@ describe('The ComplexComponent component', () => {
     it('renders as expected', () => {
         const wrapper = shallow(
             <ComplexComponent heading="Test heading" /> // Provide the 'heading' prop only as the others are injected
-        ).dive().dive().dive().dive();  // "one dive per HOC"
+        ).dive().dive().dive().dive();  // "one dive per HOC" doesn't look great here
         
         expect(wrapper).toMatchSnapshot();
     });

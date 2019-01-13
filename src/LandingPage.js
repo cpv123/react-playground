@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Menu, MenuItem } from '@material-ui/core';
-import { compose, withState, withHandlers } from 'recompose';
+import { Button, Popover, MenuItem } from '@material-ui/core';
+import { withState } from 'recompose';
 import { Link } from 'react-router-dom';
 
 const examples = {
@@ -8,29 +8,40 @@ const examples = {
     "Render Props": "/render-props",
     "Recompose Context": "/context",
     "React Select": "/select",
-    "Virtualized Table": "/table",
+    "Virtualized Tables": "/tables",
     "Styled Component": "/styled-components",
     "HOC Testing": "/hoc-testing",
+    "Routing": "/routing",
 };
 
-function LandingPage({ anchorE1, toggleMenu }) {
-    const open = !!anchorE1;
+function LandingPage({ anchorEl, updateAnchorEl }) {
+
+    const open = !!anchorEl;
+
     return (
-        <div>
+        <div style={{ padding: 50 }}>
             <Button
                 variant="contained"
                 color="primary"
-                aria-owns={open ? "examples-menu" : undefined}
+                aria-owns={open ? "examples-popover" : undefined}
                 aria-haspopup="true"
-                onClick={() => toggleMenu()}
+                onClick={(event) => updateAnchorEl(event.currentTarget)}
             >
                 See examples
             </Button>
-            <Menu 
-                id="exmaples=menu" 
-                anchorE1={anchorE1}
+            <Popover 
+                id="examples-popover" 
+                anchorEl={anchorEl}
                 open={open}
-                onClose={() => toggleMenu()}
+                onClose={() => updateAnchorEl(null)}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
             >
                 {
                     Object.keys(examples).map(key => (
@@ -39,16 +50,9 @@ function LandingPage({ anchorE1, toggleMenu }) {
                         </MenuItem>
                     ))
                 }
-            </Menu>
+            </Popover>
         </div>
     )
 }
 
-export default compose(
-    withState("anchorE1", "updateAnchorE1", null),
-    withHandlers({
-        toggleMenu: ({ anchorE1, updateAnchorE1 }) => () => {
-            updateAnchorE1(anchorE1 => !anchorE1)
-        }
-    }),
-)(LandingPage);
+export default withState("anchorEl", "updateAnchorEl", null)(LandingPage);

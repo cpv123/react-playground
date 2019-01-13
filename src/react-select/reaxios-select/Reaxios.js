@@ -2,25 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-class Reaxios extends React.Component {
+class Reaxios extends React.PureComponent {
     
-    constructor(props) {
-        super(props);
+    state = {
+        response: null,
+        isLoading: true,
+        error: null,
+    };
 
-        this.state = {
-            response: null,
-            isLoading: true,
-            error: null, 
-        };
+    CancelToken = axios.CancelToken;
+
+    componentDidMount() {
+        this.makeRequest(this.props);
     }
 
-    componentWillMount() {
-        this.makeRequest();
-    }
+    // componentWillUnmount() {
+    //     if (typeof this.cancel === 'function') {
+    //         this.cancel();
+    //     }
+    // }
 
     async makeRequest(props) {
         try {
-            const res = await axios.get(this.props.url);
+            const res = await axios.get(props.url);
             this.setState({
                 isLoading: false,
                 response: res.data,

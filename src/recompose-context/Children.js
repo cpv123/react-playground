@@ -2,23 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, getContext } from 'recompose';
 
-export function ChildOne() {
-    return (
-        <ChildTwo />
-    );
-}
+// Ignores props from context
+export const ChildOne = () => (
+    <ChildTwo />
+);
 
-function ChildTwo() {
-    return (
-        <ChildThreeWithContext />
-    );
-}
+// Ignores props from context
+const ChildTwo = () => (
+    <ChildThreeWithContext />
+);
 
-function ChildThree({ context }) {
-    return (
-        <span>{context}</span>
-    );
-}
+// This component wants the props so subscribes to the context from Provider
+const ChildThree = ({ context }) => (
+    <span>{context}</span>
+);
 
 const ChildThreeWithContext = compose(
     getContext({ context: PropTypes.string })

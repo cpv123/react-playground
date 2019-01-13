@@ -7,11 +7,13 @@ import Context from './recompose-context/Provider';
 import SelectContainer from './react-select';
 import RenderProps from './render-props';
 import Hocs from './hoc-testing';
+import RoutingButton from './routing';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <RoutingButton />
         <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/saga" component={SagaExample} />
