@@ -8,6 +8,7 @@ import SelectContainer from './react-select';
 import RenderProps from './render-props';
 import Hocs from './hoc-testing';
 import RoutingButton from './routing';
+import Lifecycle from './lifecycle';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path="/select" component={SelectContainer} />
             <Route path="/render-props" component={RenderProps} />
             <Route path="/hoc-testing" component={Hocs} />
+            <Route path="/lifecycle" component={Lifecycle} />
         </Switch>
       </div>
     );

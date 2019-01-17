@@ -12,6 +12,7 @@ const examples = {
     "Styled Component": "/styled-components",
     "HOC Testing": "/hoc-testing",
     "Routing": "/routing",
+    "Lifecycle": "/lifecycle"
 };
 
 function LandingPage({ anchorEl, updateAnchorEl }) {
