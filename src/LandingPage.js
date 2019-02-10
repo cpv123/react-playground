@@ -3,17 +3,7 @@ import { Button, Popover, MenuItem } from '@material-ui/core';
 import { withState } from 'recompose';
 import { Link } from 'react-router-dom';
 
-const examples = {
-    "Redux Saga": "/saga",
-    "Render Props": "/render-props",
-    "Recompose Context": "/context",
-    "React Select": "/select",
-    "Virtualized Tables": "/tables",
-    "Styled Component": "/styled-components",
-    "HOC Testing": "/hoc-testing",
-    "Routing": "/routing",
-    "Lifecycle": "/lifecycle"
-};
+import routesConfig from './routes-config';
 
 function LandingPage({ anchorEl, updateAnchorEl }) {
 
@@ -45,11 +35,15 @@ function LandingPage({ anchorEl, updateAnchorEl }) {
                 }}
             >
                 {
-                    Object.keys(examples).map(key => (
-                        <MenuItem key={key}>
-                            <Link to={examples[key]}>{key}</Link>
-                        </MenuItem>
-                    ))
+                    Object.keys(routesConfig).map(key => {
+                        if (routesConfig[key].visible) {
+                            return (
+                                <MenuItem key={key}>
+                                    <Link to={routesConfig[key].path}>{key}</Link>
+                                </MenuItem>
+                            );
+                        }
+                    })
                 }
             </Popover>
         </div>
