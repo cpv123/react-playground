@@ -4,14 +4,20 @@ import { compose, withContext, withProps } from 'recompose';
 import { ChildOne } from './Children';
 
 // Parent component which provides the context
-const Provider = ({ context }) => (
+const Provider = ({ store }) => (
     <ChildOne />
 );
 
 export default compose(
-    withProps({ context: "Test context string" }),
+    // An example 'global store'.
+    withProps({ 
+        store: {
+            data: [1, 2, 3],
+            isAdmin: true,
+        }
+    }),
     withContext(
-        { context: PropTypes.string },
-        (props) => ({ context: props.context })
+        { store: PropTypes.object },
+        (props) => ({ store: props.store })
     )
 )(Provider);
