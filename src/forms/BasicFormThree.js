@@ -91,7 +91,7 @@ class BasicFormThree extends React.Component {
                         name="numberOfItems"
                         placeholder="Number of items" 
                         value={numberOfItems} 
-                        onChange={this.updateFormField} 
+                        onChange={this.updateFormField}
                     />
 
                     <select 
