@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Field, Form } from 'formik';
 
 const FormikBasicOne = () => (
-	<div>
+	<div style={{ margin: 10 }}>
 		<Formik
 			initialValues={{
 				itemName: '',

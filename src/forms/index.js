@@ -5,6 +5,7 @@ import BasicFormThree from './BasicFormThree';
 
 import FormikBasicOne from './FormikBasicOne';
 import FormikBasicTwo from './FormikBasicTwo';
+import FormikBasicThree from './FormikBasicThree';
 
 function Forms() {
     return (
@@ -16,6 +17,7 @@ function Forms() {
             <h3>Formik forms</h3>
             <FormikBasicOne />
             <FormikBasicTwo />
+            <FormikBasicThree />
         </div>
     )
 }

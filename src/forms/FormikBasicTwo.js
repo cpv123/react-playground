@@ -12,7 +12,7 @@ const SignUpSchema = Yup.object().shape({
   });
 
 const FormikBasicTwo = () => (
-	<div>
+	<div style={{ margin: 10 }}>
 		<Formik
 			initialValues={{
 				itemName: '',
@@ -26,10 +26,10 @@ const FormikBasicTwo = () => (
 			render={({ errors, touched }) => (
 				<Form>
 					<Field name="itemName" placeholder="Item Name" />
-                    <ErrorMessage name="itemName" component="div" />
+                    <ErrorMessage name="itemName" component="span" />
 
 					<Field type="number" name="numberOfItems" placeholder="Number of items" />
-                    <ErrorMessage name="numberOfItems" component="div" />
+                    <ErrorMessage name="numberOfItems" component="span" />
 
                     <Field component="select" name="isUrgent">
                         <option value={true}>Yes</option>
