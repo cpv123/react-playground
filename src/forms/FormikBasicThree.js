@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import Select from 'react-select';
 import './FormikBasicThree.css';
 
 const SignUpSchema = Yup.object().shape({
@@ -61,15 +62,7 @@ const FormikBasicThree = () => (
                     <label htmlFor="is-urgent-select" className="label">
                         Urgent Order
                     </label>
-                    <Field 
-                        id="is-urgent-select"
-                        component="select" 
-                        name="isUrgent"
-                        className="select"
-                    >
-                        <option value={true}>Yes</option>
-                        <option value={false}>No</option>
-                    </Field>
+                    <MySelect />
 			
                     <div className="buttons-container">
                         <button 
@@ -91,6 +84,21 @@ const FormikBasicThree = () => (
 			)}
 		/>
 	</div>
-  );
+);
   
-  export default FormikBasicThree;
+export default FormikBasicThree;
+
+const options = [
+    { value: true, label: 'Yes' },
+    { value: false, label: 'No' }
+];
+
+class MySelect extends React.Component {
+    render() {
+        return (
+            <Select
+                options={options} 
+            />
+        )
+    }
+}
