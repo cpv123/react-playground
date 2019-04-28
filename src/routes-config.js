@@ -8,6 +8,7 @@ import RoutingButton from './routing';
 import Lifecycle from './lifecycle';
 import SelectUsingReaxios from './reaxios-hook/SelectUsingReaxios';
 import ApolloGraphql from './apollo-graphql/ApolloGraphql';
+import Forms from './forms';
 
 const routesConfig = {
     "Redux Saga": {
@@ -58,6 +59,11 @@ const routesConfig = {
     "Apollo GraphQL": {
         path: "/apollo-gql",
         component: ApolloGraphql,
+        visible: true,
+    },
+    "Forms": {
+        path: "/forms",
+        component: Forms,
         visible: true,
     }
 };
