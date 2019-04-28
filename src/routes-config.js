@@ -7,6 +7,7 @@ import Hocs from './hoc-testing';
 import RoutingButton from './routing';
 import Lifecycle from './lifecycle';
 import SelectUsingReaxios from './reaxios-hook/SelectUsingReaxios';
+import ApolloGraphql from './apollo-graphql/ApolloGraphql';
 
 const routesConfig = {
     "Redux Saga": {
@@ -52,6 +53,11 @@ const routesConfig = {
     "Reaxios Hook": {
         path: "/use-reaxios-select",
         component: SelectUsingReaxios,
+        visible: true,
+    },
+    "Apollo GraphQL": {
+        path: "/apollo-gql",
+        component: ApolloGraphql,
         visible: true,
     }
 };

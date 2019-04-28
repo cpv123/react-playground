@@ -32,9 +32,12 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
     "file-loader": "2.0.0",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "7.0.0",
+    "graphql": "^14.2.1",
     "html-webpack-plugin": "4.0.0-alpha.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
@@ -42,6 +45,7 @@
     "jest-resolve": "23.6.0",
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "0.4.3",
+    "mongoose": "^5.5.3",
     "mui-virtualized-table": "^2.1.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.1.0",
@@ -50,6 +54,7 @@
     "postcss-preset-env": "6.0.6",
     "postcss-safe-parser": "4.0.1",
     "react": "^16.8.1",
+    "react-apollo": "^2.5.5",
     "react-app-polyfill": "^0.1.3",
     "react-dev-utils": "^6.1.1",
     "react-dom": "^16.8.1",
@@ -72,7 +77,10 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "start:server": "nodemon index.js",
+    "start:rest": "cd server/rest && npm run start:server",
+    "start:graphql": "cd server/graphql && npm run start:server"
   },
   "eslintConfig": {
     "extends": "react-app"
