@@ -7,7 +7,7 @@ import Hocs from './hoc-testing';
 import RoutingButton from './routing';
 import Lifecycle from './lifecycle';
 import SelectUsingReaxios from './reaxios-hook/SelectUsingReaxios';
-import ApolloGraphql from './apollo-graphql/ApolloGraphql';
+import ApolloGraphql from './apollo-graphql';
 import Forms from './forms';
 
 const routesConfig = {

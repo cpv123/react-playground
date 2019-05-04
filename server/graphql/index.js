@@ -29,16 +29,27 @@ const db = [
 
 // The root provides a resolver function for each API endpoint
 var rootValue = {
-	shops: ({ location }) => {
-		if (location) {
-			return db.filter(item => item.location.includes(location));
-		} else {
-			return db;
-		}
-	}
+    shops: ({ location }) => {
+        if (location) {
+            return db.filter(item => item.location.includes(location));
+        } else {
+            return db;
+        }
+    }
 };
 
 const app = express();
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    } else {
+        return next();
+    }
+});
 
 app.use('/graphql', graphqlHTTP({
 	schema,
