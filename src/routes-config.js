@@ -9,6 +9,8 @@ import Lifecycle from './lifecycle';
 import SelectUsingReaxios from './reaxios-hook/SelectUsingReaxios';
 import ApolloGraphql from './apollo-graphql';
 import Forms from './forms';
+import ImmutableRedux from './immutable-js';
+
 
 const routesConfig = {
     "Redux Saga": {
@@ -64,6 +66,11 @@ const routesConfig = {
     "Forms": {
         path: "/forms",
         component: Forms,
+        visible: true,
+    },
+    "Immutable Redux": {
+        path: "/immutable-redux",
+        component: ImmutableRedux,
         visible: true,
     }
 };
