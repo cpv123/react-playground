@@ -3,8 +3,6 @@ import { Button, Popover, MenuItem } from '@material-ui/core';
 import { withState } from 'recompose';
 import { Link } from 'react-router-dom';
 
-import { isEqual } from 'lodash';
-
 import routesConfig from './routes-config';
 
 function LandingPage({ anchorEl, updateAnchorEl }) {

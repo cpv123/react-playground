@@ -5,12 +5,17 @@ import reducer from './redux/reducer';
 import ImmutableJsComponent from './ImmutableJsComponent';
 import AnotherComponent from './AnotherComponent';
 
-const store = createStore(reducer);
+// const store = createStore(reducer);
 
 class ImmutableJsRedux extends React.Component {
+    constructor(props) {
+        super(props);
+        this.store = createStore(reducer);
+    };
+    
     render() {
         return (
-            <Provider store={store}>
+            <Provider store={this.store}>
                 <ImmutableJsComponent />
                 <AnotherComponent />
             </Provider>
