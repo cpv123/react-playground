@@ -10,7 +10,7 @@ import SelectUsingReaxios from './reaxios-hook/SelectUsingReaxios';
 import ApolloGraphql from './apollo-graphql';
 import Forms from './forms';
 import ImmutableRedux from './immutable-js';
-
+import CodeSplitApp from './code-splitting';
 
 const routesConfig = {
     "Redux Saga": {
@@ -71,6 +71,11 @@ const routesConfig = {
     "Immutable Redux": {
         path: "/immutable-redux",
         component: ImmutableRedux,
+        visible: true,
+    },
+    "Code Splitting": {
+        path: "/code-splitting",
+        component: CodeSplitApp,
         visible: true,
     }
 };
