@@ -1,0 +1,13 @@
+.container {
+    width: 400px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: lightgrey;
+  }
+  
+  .inner {
+    background-color: black;
+    height: inherit;
+    border-radius: inherit;
+  }
+  

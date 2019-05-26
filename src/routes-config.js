@@ -11,6 +11,7 @@ import ApolloGraphql from './apollo-graphql';
 import Forms from './forms';
 import ImmutableRedux from './immutable-js';
 import CodeSplitApp from './code-splitting';
+import ProgressBar from './progress-bar';
 
 const routesConfig = {
     "Redux Saga": {
@@ -76,6 +77,11 @@ const routesConfig = {
     "Code Splitting": {
         path: "/code-splitting",
         component: CodeSplitApp,
+        visible: true,
+    },
+    "Progress Bar": {
+        path: "/progress-bar",
+        component: ProgressBar,
         visible: true,
     }
 };
