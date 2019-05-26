@@ -1,6 +1,7 @@
 import React from 'react';
 import ProgressBar from './ProgressBar';
 import wrapper from './ProgressBarHoc';
+import ProgressBarLogic from './ProgressBar.logic';
 
 // Wrap the 'dumb' progress bar in the HOC.
 const WrappedProgressBar = wrapper(ProgressBar);
@@ -38,7 +39,12 @@ class ProgressBarContainer extends React.Component {
             <button onClick={this.handleDecrease} style={{ marginRight: 10 }}>Decrease</button>
             <span>Percentage: {percentage}</span>
         </div>
+        <span>Using HOC:</span>
         <WrappedProgressBar percentage={percentage} colors={colorsProp} />
+        <br />
+
+        <span>Using Logic:</span>
+        <ProgressBarLogic percentage={percentage} colors={colorsProp} />
       </div>
     );
   }
