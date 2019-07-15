@@ -35,4 +35,6 @@ const mapStoreToProps = store => ({
     data: store.data,
 })
 
+// This component wants only certain props from the store - 
+// those defined in mapStoreToProps.
 const ChildFourWithContext = withStore(mapStoreToProps)(ChildFour);
