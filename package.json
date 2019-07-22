@@ -150,6 +150,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "compression-webpack-plugin": "^3.0.0",
     "sinon": "^7.3.2",
     "sinon-sandbox": "^2.0.2",
     "webpack-bundle-analyzer": "^3.3.2"
