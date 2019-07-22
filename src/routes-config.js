@@ -12,6 +12,7 @@ import Forms from './forms';
 import ImmutableRedux from './immutable-js';
 import CodeSplitApp from './code-splitting';
 import ProgressBar from './progress-bar';
+import LifecycleHoc from './update-for-props-hoc';
 
 const routesConfig = {
     "Redux Saga": {
@@ -82,6 +83,11 @@ const routesConfig = {
     "Progress Bar": {
         path: "/progress-bar",
         component: ProgressBar,
+        visible: true,
+    },
+    "Lifecyle HOC": {
+        path: "/lifecyle-hoc",
+        component: LifecycleHoc,
         visible: true,
     }
 };
