@@ -13,6 +13,7 @@ import ImmutableRedux from './immutable-js';
 import CodeSplitApp from './code-splitting';
 import ProgressBar from './progress-bar';
 import LifecycleHoc from './update-for-props-hoc';
+import PromiseCount from './promise-count'
 
 const routesConfig = {
     "Redux Saga": {
@@ -88,6 +89,11 @@ const routesConfig = {
     "Lifecyle HOC": {
         path: "/lifecyle-hoc",
         component: LifecycleHoc,
+        visible: true,
+    },
+    "Promise Count": {
+        path: "/promise-count",
+        component: PromiseCount,
         visible: true,
     }
 };
