@@ -1,19 +1,21 @@
-const promiseCount = async promises => {
-    const results = []
+const PromiseCount = async promises => {
+    const results = [];
 
-    for (let promise of promises) {
-        await promise
-            .then(value => results.push({
-                success: true,
-                value,
-            }))
-            .catch(value => results.push({
-                success: false,
-                value
-            }))
-    }
+    const successHandler = value => results.push({
+        success: true,
+        value,
+    });
+
+    const errorHandler = value => results.push({
+        success: false,
+        value,
+    });
+
+    await Promise.all(promises.map(p => (
+        p.then(successHandler).catch(errorHandler)
+    )));
 
     return results;
 }
 
-export default promiseCount;
+export default PromiseCount;

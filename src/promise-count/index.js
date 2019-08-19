@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
-import promiseCount from './promise-count.js'
+import PromiseCount from './promise-count.js'
 
-const PromiseCount = () => {
+const PromiseCounter = () => {
     const [sucessCount, setSuccessCount] = useState(0)
     const [failCount, setFailCount] = useState(0)
 
     const handleClick = async () => {
-        const promise1 = new Promise((resolve, reject) => setTimeout(() => reject(1), 5000))
+        const promise1 = new Promise((resolve, reject) => {
+            setTimeout(() => reject(1), 3000)
+        })
         const promise2 = new Promise((resolve, reject) => resolve(2))
         const promises = [promise1, promise2, promise2]
 
-        const results = await promiseCount(promises)
+        const results = await PromiseCount(promises);
 
         setSuccessCount(results.filter(r => r.success).length)
         setFailCount(results.filter(r => !r.success).length)
@@ -25,4 +27,4 @@ const PromiseCount = () => {
     )
 }
 
-export default PromiseCount
+export default PromiseCounter
