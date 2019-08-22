@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import PromiseCount from './promise-count.js'
+// import PromiseCount from './promise-count-local'
+import PromiseCount from 'promise-count'
 
 const PromiseCounter = () => {
     const [sucessCount, setSuccessCount] = useState(0)

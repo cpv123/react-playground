@@ -1,4 +1,4 @@
-const PromiseCount = async promises => {
+const PromiseCount = promises => {
     const results = [];
 
     const successHandler = value => results.push({
@@ -11,11 +11,9 @@ const PromiseCount = async promises => {
         value,
     });
 
-    await Promise.all(promises.map(p => (
+    return Promise.all(promises.map(p => (
         p.then(successHandler).catch(errorHandler)
-    )));
-
-    return results;
+    ))).then(() => results)
 }
 
 export default PromiseCount;
