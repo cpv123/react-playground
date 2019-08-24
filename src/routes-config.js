@@ -14,6 +14,7 @@ import CodeSplitApp from './code-splitting';
 import ProgressBar from './progress-bar';
 import LifecycleHoc from './update-for-props-hoc';
 import PromiseCount from './promise-count'
+import ReduxMiddleware from './redux-middleware';
 
 const routesConfig = {
     "Redux Saga": {
@@ -94,6 +95,11 @@ const routesConfig = {
     "Promise Count": {
         path: "/promise-count",
         component: PromiseCount,
+        visible: true,
+    },
+    "Redux middleware": {
+        path: "/redux-middleware",
+        component: ReduxMiddleware,
         visible: true,
     }
 };
