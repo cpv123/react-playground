@@ -8,23 +8,31 @@ const myMiddleware = ({ dispatch }) => next => action => {
 		return next(action)
 	}
 
-	const newActionName = action.type.substring(1)
+	const actionName = action.type.substring(1)
 
-	dispatch({ type: `${newActionName}_START` })
+	dispatch({ type: `${actionName}_START` })
 
 	action.requestToMake
 		.then(res => {
 			dispatch({
-				type: `${newActionName}_RECEIVE`,
+				type: `${actionName}_RECEIVE`,
 				payload: res,
 			})
 		})
 		.catch(err => {
 			dispatch({
-				type: `${newActionName}_ERROR`,
+				type: `${actionName}_ERROR`,
 				payload: err,
 			})
 		})
 }
 
-export default myMiddleware
+const fetchAction = (type, requestToMake) => ({
+	type: `@${type}`,
+	requestToMake,
+})
+
+export {
+	fetchAction,
+	myMiddleware,
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getData, getDataFail } from './redux/actions'
+import { fetchAction } from './redux/custom-middleware'
 
 const Child = ({ isLoading, data, isError, getData, getDataFail }) => (
 	<>
@@ -18,7 +18,12 @@ const mapStateToProps = ({ isLoading, isError, data }) => ({
 	isError,
 })
 
+const getData = () => {
+	const promise = new Promise((r, j) => setTimeout(() => r([1, 2, 3]), 3000))
+	return fetchAction('GET_DATA', promise)
+}
+
 export default connect(mapStateToProps, {
 	getData,
-	getDataFail,
+	getDataFail: () => fetchAction('GET_MORE_DATA', new Promise((r, j) => setTimeout(() => j(1), 3000))),
 })(Child)
