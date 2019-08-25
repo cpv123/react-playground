@@ -18,8 +18,7 @@ const myMiddleware = ({ dispatch }) => next => action => {
 				type: `${actionName}_RECEIVE`,
 				payload: res,
 			})
-		})
-		.catch(err => {
+		}, err => {
 			dispatch({
 				type: `${actionName}_ERROR`,
 				payload: err,
