@@ -15,6 +15,7 @@ import ProgressBar from './progress-bar';
 import LifecycleHoc from './update-for-props-hoc';
 import PromiseCount from './promise-count'
 import ReduxMiddleware from './redux-middleware';
+import ExampleNumber from './libphonenumber';
 
 const routesConfig = {
     "Redux Saga": {
@@ -100,6 +101,11 @@ const routesConfig = {
     "Redux middleware": {
         path: "/redux-middleware",
         component: ReduxMiddleware,
+        visible: true,
+    },
+    "Libphonenumber": {
+        path: '/lib-phone-number',
+        component: ExampleNumber,
         visible: true,
     }
 };
