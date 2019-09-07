@@ -8,36 +8,28 @@ import LandingPage from './LandingPage';
 import RoutingButton from './routing';
 import routesConfig from './routes-config';
 
-const App = ({ theme, toggleTheme }) => {
-    return (
-        <div className="App">
-            <MuiThemeProvider theme={themes[theme]}>
-
-                <RoutingButton />
-
-                <Toggle 
-                    onClick={() => {
-                        const target = theme === 'light' ? 'dark' : 'light';
-                        toggleTheme(target);
-                    }} 
-                />
-
-                <Switch>
-                    <Route exact path="/" component={LandingPage} />
-                    {
-                        Object.keys(routesConfig).map(key => (
-                            <Route 
-                                key={key}
-                                path={routesConfig[key].path} 
-                                component={routesConfig[key].component}
-                            />
-                        ))
-                    }
-                </Switch>
-
-            </MuiThemeProvider>
-        </div>
-    );
-}
+const App = ({ theme, toggleTheme }) => (
+	<div className="App">
+		<MuiThemeProvider theme={themes[theme]}>
+			<RoutingButton />
+			<Toggle 
+					onClick={() => {
+						const target = theme === 'light' ? 'dark' : 'light';
+						toggleTheme(target);
+					}} 
+			/>
+			<Switch>
+				<Route exact path="/" component={LandingPage} />
+					{Object.keys(routesConfig).map(key => (
+						<Route 
+							key={key}
+							path={routesConfig[key].path} 
+							component={routesConfig[key].component}
+						/>
+					))}
+			</Switch>
+		</MuiThemeProvider>
+	</div>
+);
 
 export default withDarkMode(App);
