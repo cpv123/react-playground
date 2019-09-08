@@ -16,6 +16,7 @@ import LifecycleHoc from './update-for-props-hoc';
 import PromiseCount from './promise-count'
 import ReduxMiddleware from './redux-middleware';
 import ExampleNumber from './libphonenumber';
+import InfinteList from './infinite-scroll';
 
 const routesConfig = {
     "Redux Saga": {
@@ -104,8 +105,13 @@ const routesConfig = {
         visible: true,
     },
     "Libphonenumber": {
-        path: '/lib-phone-number',
+        path: "/lib-phone-number",
         component: ExampleNumber,
+        visible: true,
+    },
+    "Infinte List": {
+        path: "/infinite-list",
+        component: InfinteList,
         visible: true,
     }
 };
