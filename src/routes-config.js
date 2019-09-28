@@ -17,7 +17,7 @@ import PromiseCount from './promise-count'
 import ReduxMiddleware from './redux-middleware';
 import ExampleNumber from './libphonenumber';
 import InfinteList from './infinite-scroll';
-import AuthContext from './context-comparison/pre-hooks'
+import ContextHooks from './context-comparison'
 
 const routesConfig = {
     "Redux Saga": {
@@ -117,7 +117,7 @@ const routesConfig = {
     },
     "Context compare": {
         path: "/context-compare",
-        component: AuthContext,
+        component: ContextHooks,
         visible: true,
     }
 };

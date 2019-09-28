@@ -4,6 +4,7 @@ import { AuthProvider, connectAuth } from './auth-context'
 export default function App() {
   return (
     <AuthProvider>
+      <h2>Without hooks</h2>
       <Main />
     </AuthProvider>
   )
