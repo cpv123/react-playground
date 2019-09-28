@@ -17,6 +17,7 @@ import PromiseCount from './promise-count'
 import ReduxMiddleware from './redux-middleware';
 import ExampleNumber from './libphonenumber';
 import InfinteList from './infinite-scroll';
+import AuthContext from './context-comparison/pre-hooks'
 
 const routesConfig = {
     "Redux Saga": {
@@ -112,6 +113,11 @@ const routesConfig = {
     "Infinte List": {
         path: "/infinite-list",
         component: InfinteList,
+        visible: true,
+    },
+    "Context compare": {
+        path: "/context-compare",
+        component: AuthContext,
         visible: true,
     }
 };
