@@ -3,8 +3,13 @@ import React from 'react'
 const AuthContext = React.createContext({})
 
 class AuthProvider extends React.Component {
+  /**
+   * Note that we put the update function in state so that we can pass
+   * a 'value' to the Provider that won't change all the time.
+   */
   state = {
     isAdmin: false,
+    updateIsAdmin: this.updateIsAdmin,
   }
 
   updateIsAdmin = isAdmin => {
@@ -13,13 +18,7 @@ class AuthProvider extends React.Component {
 
   render() {
     return (
-      <AuthContext.Provider
-        value={{
-          isAdmin: this.state.isAdmin,
-          updateIsAdmin: this.updateIsAdmin,
-        }}
-        {...this.props}
-      />
+      <AuthContext.Provider value={this.state} {...this.props} />
     )
   }
 }
