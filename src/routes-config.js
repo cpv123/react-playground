@@ -18,6 +18,7 @@ import ReduxMiddleware from './redux-middleware';
 import ExampleNumber from './libphonenumber';
 import InfinteList from './infinite-scroll';
 import ContextHooks from './context-comparison'
+import ConnectedComponent from './map-state-dev-tools'
 
 const routesConfig = {
     "Redux Saga": {
@@ -118,6 +119,11 @@ const routesConfig = {
     "Context compare": {
         path: "/context-compare",
         component: ContextHooks,
+        visible: true,
+    },
+    "ConnectedComponent": {
+        path: "/dev-tools-actions",
+        component: ConnectedComponent,
         visible: true,
     }
 };
