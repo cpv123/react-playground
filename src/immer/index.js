@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect, Provider } from 'react-redux'
-import store from './store'
+import reducer from './reducer'
+import { createBasicStore } from '../utils'
+
+const store = createBasicStore(reducer)
 
 export default class Main extends React.Component {
 	constructor(props) {
