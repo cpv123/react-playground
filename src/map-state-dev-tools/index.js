@@ -18,10 +18,18 @@ const actions = [
   'RUN 🏃‍♂️',
 ]
 
-const reducer = (state = { count: 0 }, action) => ({
-  ...state,
-  count: action.payload
-})
+const reducer = (state = { 
+  count: 0,
+  authentication: { isAuthenticated: true }, 
+}, action) => {
+  if (action.type === 'UNKNOWN') {
+    return { ...state }
+  }
+  return {
+    ...state,
+    count: action.payload,
+  }
+}
 
 const createStoreWithMiddleware = compose(
 	window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f)(createStore)
@@ -56,13 +64,29 @@ const MyComponent = ({ dispatch, count }) => {
     loopThroughActions()
   }, [])
 
+  const actionThatDoesNotUpdateState = () => {
+    dispatch({
+      type: 'UNKNOWN'
+    })
+  }
+
+  console.log('Going to re-render')
+
   return (
-    <p>{count}</p>
+    <div>
+      <p>{count}</p>
+      <button 
+        onClick={() => actionThatDoesNotUpdateState()}
+      >
+        Action that does not update state
+      </button>
+    </div>
   )
 }
 
-const mapStateToProps = state => ({
-  count: state.count,
+const mapStateToProps = ({ count, authentication }) => ({
+  count: count,
+  authentication: authentication,
 })
 
 const MyConnectedComponent = connect(mapStateToProps)(MyComponent)
