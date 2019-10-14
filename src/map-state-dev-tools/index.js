@@ -84,9 +84,9 @@ const MyComponent = ({ dispatch, count }) => {
   )
 }
 
-const mapStateToProps = ({ count, authentication }) => ({
-  count: count,
-  authentication: authentication,
+const mapStateToProps = state => ({
+  count: state.count,
+  authentication: { isAuthenticated: true },
 })
 
 const MyConnectedComponent = connect(mapStateToProps)(MyComponent)
