@@ -20,6 +20,7 @@ import InfinteList from './infinite-scroll';
 import ContextHooks from './context-comparison'
 import ConnectedComponent from './map-state-dev-tools'
 import OneFileRedux from './one-file-redux'
+import ImmerExample from './immer'
 
 const routesConfig = {
     "Redux Saga": {
@@ -130,6 +131,11 @@ const routesConfig = {
     "One File Redux": {
         path: "/one-file-redux",
         component: OneFileRedux,
+        visible: true,
+    },
+    "Immer Exmaple": {
+        path: "/immer-example",
+        component: ImmerExample,
         visible: true,
     }
 };

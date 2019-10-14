@@ -1,5 +1,6 @@
 import React from 'react'
-import { connect, Provider } from 'react-redux'
+import { Provider } from 'react-redux'
+import MyConnectedComponent from './Component'
 import reducer from './reducer'
 import { createBasicStore } from '../utils'
 
@@ -20,10 +21,3 @@ export default class Main extends React.Component {
 	}
 } 
 
-const MyComponent = () => {
-  return (
-    null
-  )
-}
-
-const MyConnectedComponent = connect()(MyComponent)
