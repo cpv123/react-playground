@@ -19,6 +19,7 @@ import ExampleNumber from './libphonenumber';
 import InfinteList from './infinite-scroll';
 import ContextHooks from './context-comparison'
 import ConnectedComponent from './map-state-dev-tools'
+import OneFileRedux from './one-file-redux'
 
 const routesConfig = {
     "Redux Saga": {
@@ -124,6 +125,11 @@ const routesConfig = {
     "ConnectedComponent": {
         path: "/dev-tools-actions",
         component: ConnectedComponent,
+        visible: true,
+    },
+    "One File Redux": {
+        path: "/one-file-redux",
+        component: OneFileRedux,
         visible: true,
     }
 };
