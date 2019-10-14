@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from "react-apollo";
-import ApolloClient, { gql } from "apollo-boost";
+import ApolloClient from "apollo-boost";
 
 import QueryComponent from './QueryComponent';
 

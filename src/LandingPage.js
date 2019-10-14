@@ -39,6 +39,7 @@ function LandingPage({ anchorEl, updateAnchorEl }) {
 							</MenuItem>
 						);
 					}
+					return null
 				})}
 			</Popover>
 		</div>
