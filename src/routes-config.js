@@ -21,6 +21,7 @@ import ContextHooks from './context-comparison'
 import ConnectedComponent from './map-state-dev-tools'
 import OneFileRedux from './one-file-redux'
 import ImmerExample from './immer'
+import ReduxHooks from './redux-hooks'
 
 const routesConfig = {
     "Redux Saga": {
@@ -133,11 +134,16 @@ const routesConfig = {
         component: OneFileRedux,
         visible: true,
     },
-    "Immer Exmaple": {
+    "Immer Example": {
         path: "/immer-example",
         component: ImmerExample,
         visible: true,
-    }
+    },
+    "Redux Hooks": {
+        path: "/redux-hooks",
+        component: ReduxHooks,
+        visible: true,
+    },
 };
 
 export default routesConfig;
