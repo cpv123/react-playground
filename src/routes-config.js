@@ -23,6 +23,7 @@ import OneFileRedux from './one-file-redux'
 import ImmerExample from './immer'
 import ReduxHooks from './redux-hooks'
 import MyImmutable from './my-immutable-library'
+import MobXCounter from './mobx'
 
 const routesConfig = {
 	"Redux Saga": {
@@ -148,8 +149,13 @@ const routesConfig = {
 	"My Immutable Library": {
 		path: "/my-immutable",
 		component: MyImmutable,
-		visibile: true,
-	}
+		visible: true,
+  },
+  "MobX Counter": {
+    path: "/mobx-counter",
+    component: MobXCounter,
+    visible: true,
+  }
 };
 
 export default routesConfig;
