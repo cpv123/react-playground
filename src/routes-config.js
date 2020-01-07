@@ -24,6 +24,7 @@ import ImmerExample from './immer'
 import ReduxHooks from './redux-hooks'
 import MyImmutable from './my-immutable-library'
 import MobXCounter from './mobx'
+import ImmerContinued from './immer-continued'
 
 const routesConfig = {
 	"Redux Saga": {
@@ -154,6 +155,11 @@ const routesConfig = {
   "MobX Counter": {
     path: "/mobx-counter",
     component: MobXCounter,
+    visible: true,
+  },
+  "Immer Continued": {
+    path: "/immer-continued",
+    component: ImmerContinued,
     visible: true,
   }
 };
