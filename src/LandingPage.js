@@ -1,49 +1,36 @@
-import React from 'react';
-import { Button, Popover, MenuItem } from '@material-ui/core';
-import { withState } from 'recompose';
-import { Link } from 'react-router-dom';
-import routesConfig from './routes-config';
+import React from 'react'
+import ExamplesButton from './ExamplesButton'
+import routesConfig from './routes-config'
 
-function LandingPage({ anchorEl, updateAnchorEl }) {
-  const open = !!anchorEl;
+function LandingPage() {
+  const routeNames = Object.keys(routesConfig)
+  const halfRoutes = routeNames.length / 2
+  const firstHalf = routeNames.reduce((acc, curr, index) => {
+    if (index < halfRoutes) {
+      acc[curr] = routesConfig[curr]
+    }
+    return acc
+  }, {})
+
+  const secondHalf = routeNames.reduce((acc, curr, index) => {
+    if (index >= halfRoutes) {
+      acc[curr] = routesConfig[curr]
+    }
+    return acc
+  }, {})
+
   return (
-		<div style={{ padding: 50 }}>
-			<Button
-				variant="contained"
-				color="primary"
-				aria-owns={open ? "examples-popover" : undefined}
-				aria-haspopup="true"
-				onClick={event => updateAnchorEl(event.currentTarget)}
-			>
-				See examples
-			</Button>
-			<Popover 
-				id="examples-popover" 
-				anchorEl={anchorEl}
-				open={open}
-				onClose={() => updateAnchorEl(null)}
-				anchorOrigin={{
-					vertical: 'bottom',
-					horizontal: 'left',
-				}}
-				transformOrigin={{
-					vertical: 'top',
-					horizontal: 'left',
-				}}
-			>
-				{Object.keys(routesConfig).map(key => {
-					if (routesConfig[key].visible) {
-						return (
-							<MenuItem key={key}>
-								<Link to={routesConfig[key].path}>{key}</Link>
-							</MenuItem>
-						);
-					}
-					return null
-				})}
-			</Popover>
-		</div>
-	)
+    <>
+      <ExamplesButton
+        title='See examples'
+        routes={firstHalf}
+      />
+      <ExamplesButton 
+        title='See more examples'
+        routes={secondHalf}
+      />
+    </>
+  )
 }
 
-export default withState("anchorEl", "updateAnchorEl", null)(LandingPage);
+export default LandingPage
