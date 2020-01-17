@@ -25,6 +25,7 @@ import ReduxHooks from './redux-hooks'
 import MyImmutable from './my-immutable-library'
 import MobXCounter from './mobx'
 import ImmerContinued from './immer-continued'
+import BufferQueue from './buffer'
 
 const routesConfig = {
 	"Redux Saga": {
@@ -161,6 +162,11 @@ const routesConfig = {
     path: "/immer-continued",
     component: ImmerContinued,
     visible: true,
+  },
+  "Buffer Queue": {
+	  path: "/buffer-queue",
+	  component: BufferQueue,
+	  visible: true,
   }
 };
 
